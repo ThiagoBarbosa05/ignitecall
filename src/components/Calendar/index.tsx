@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { getWeekDays } from '@/utils/get-week-days'
 import dayjs from 'dayjs'
 import {
@@ -30,11 +31,11 @@ interface BlockedDates {
 }
 
 interface CalendarProps {
-  // selectedDate: Date | null
+  selectedDate: Date | null
   onDateSelected: (date: Date) => void
 }
 
-export function Calendar({ onDateSelected }: CalendarProps) {
+export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(() => dayjs().set('date', 1))
 
   function handlePreviousMonth() {
